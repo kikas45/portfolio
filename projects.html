@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Pius Powella David</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg { background: linear-gradient(135deg,#0f172a 0%,#001219 100%);}    
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="min-h-screen font-sans text-slate-100 bg-slate-900">
+  <div class="max-w-6xl mx-auto p-6">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold">All Projects</h1>
+      <p class="text-slate-400 mt-1">Showcasing apps I’ve built and contributed to</p>
+    </header>
+
+    <!-- Project Grid -->
+    <div id="projectsGrid" class="grid gap-6 grid-cols-1 md:grid-cols-2"></div>
+
+    <!-- Back link -->
+    <div class="mt-8">
+      <a href="index.html" class="underline text-slate-400">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        title: 'Sync2App',
+        desc: 'Digital signage & media display app used by UBA, Access Bank, Parallax Bank. Built with Kotlin & Java, MVVM, Retrofit, and WorkManager.',
+        tags: ['Kotlin','Java','MVVM','Retrofit','WorkManager'],
+        live: '#', repo: '#'
+      },
+      {
+        title: 'Local Server App',
+        desc: 'Offline-first Android server for local data hosting & syncing. Built with Kotlin, SQLite, and Retrofit.',
+        tags: ['Kotlin','SQLite','REST API','Offline Sync'],
+        live: '#', repo: '#'
+      },
+      {
+        title: 'Vector News',
+        desc: 'News reader with community features powered by Firebase. Built with MVVM, Dagger Hilt, Retrofit, Paging3, and Jetpack Navigation.',
+        tags: ['Kotlin','Firebase','Paging3','Dagger Hilt','MVVM'],
+        live: '#', repo: '#'
+      },
+      {
+        title: 'Kova',
+        desc: 'Fintech app for trading gift cards, buying/selling coins, and swaps between local currency and crypto tokens. Built with Kotlin, MVVM, Dagger Hilt, Google Cloud APIs, and MongoDB.',
+        tags: ['Kotlin','MVVM','Dagger Hilt','Google Cloud','MongoDB','APIs'],
+        live: '#', repo: '#'
+      }
+    ];
+
+    const grid = document.getElementById('projectsGrid');
+    projects.forEach(p => {
+      const el = document.createElement('div');
+      el.className = 'glass p-5 rounded-lg shadow hover:scale-[1.01] transition';
+      el.innerHTML = `
+        <h3 class="text-xl font-semibold">${p.title}</h3>
+        <p class="mt-2 text-slate-300 text-sm">${p.desc}</p>
+        <div class="mt-3 text-xs text-slate-400">
+          ${p.tags.map(t => `<span class="inline-block mr-2">• ${t}</span>`).join('')}
+        </div>
+        <div class="mt-4 flex gap-3">
+          <a href="${p.live}" target="_blank" class="px-3 py-2 border border-slate-700 rounded-md text-sm">Download APK</a>
+          <a href="${p.repo}" target="_blank" class="px-3 py-2 bg-purple-600 rounded-md text-sm">View Repo</a>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+  </script>
+</body>
+</html>
