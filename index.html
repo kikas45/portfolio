@@ -94,45 +94,45 @@
     </div>
   </div>
 
-  <script>
-    const projects = [
-      {
-        id: 'sync2app',
-        title: 'Sync2App',
-        short: 'Digital signage & media display app used by UBA, Access Bank, Parallax Bank',
-        long: 'Sync2App is a kiosk-mode Android app that displays media, syncs content periodically from a remote server, includes crash analytics, QR scanning, and device lock features. Built with Kotlin & Java, MVVM, Retrofit, and WorkManager.',
-        tags: ['Kotlin','Java','MVVM','Retrofit','WorkManager'],
-        apk: 'sync2app.apk',
-        repo: 'https://github.com/kikas45/sync2app'
-      },
-      {
-        id: 'local-server',
-        title: 'Local Server App',
-        short: 'Offline-first Android server for local data hosting & syncing',
-        long: 'A local server Android application enabling offline-first capabilities. Provides RESTful APIs for local devices, syncs with cloud when available, and supports lightweight database management. Built with Kotlin, SQLite, and Retrofit.',
-        tags: ['Kotlin','SQLite','REST API','Offline Sync'],
-        apk: 'local-server.apk',
-        repo: '#'
-      },
-      {
-        id: 'vector-news',
-        title: 'Vector News',
-        short: 'News reader with community features powered by Firebase',
-        long: 'Vector News fetches headlines via REST, supports commenting and replies using Firebase, and implements pagination with Paging 3. Built with MVVM, Dagger Hilt, Retrofit, WorkManager, and Jetpack Navigation.',
-        tags: ['Kotlin','Firebase','Paging3','Dagger Hilt','MVVM'],
-        apk: 'vector-news.apk',
-        repo: '#'
-      },
-      {
-        id: 'kova',
-        title: 'Kova',
-        short: 'Fintech app for gift cards & coin exchange',
-        long: 'Kova is a secure fintech Android application for trading gift cards, buying/selling coins, and performing swaps between local currency and crypto-like tokens. Developed with Kotlin, MVVM, Dagger Hilt, integrated with Google Cloud APIs, and MongoDB backend for scalability.',
-        tags: ['Kotlin','MVVM','Dagger Hilt','Google Cloud','MongoDB','APIs'],
-        apk: 'kova.apk',
-        repo: '#'
-      }
-    ];
+<script>
+  const projects = [
+    {
+      id: 'sync2app',
+      title: 'Sync2App',
+      short: 'Digital signage & media display app used by Lafarge and Parallax Bank',
+      long: 'Sync2App is a kiosk-mode Android app that displays media, syncs content periodically from a remote server, includes crash analytics, QR scanning, and device lock features. Built with Kotlin & Java, MVVM, Retrofit, and WorkManager.',
+      tags: ['Kotlin','Java','MVVM','Retrofit','WorkManager'],
+      apk: 'https://github.com/kikas45/DigitalSignature/raw/refs/heads/main/Sync2Ap_STP10.apk',
+      repo: 'https://github.com/kikas45/DigitalSignature/blob/main/README.md'
+    },
+    {
+      id: 'local-server',
+      title: 'Local Server App',
+      short: 'Offline-first Android server for local data hosting & syncing',
+      long: 'A local server Android application enabling offline-first capabilities. Provides RESTful APIs for local devices, syncs with cloud when available, and supports lightweight database management. Built with Kotlin, SQLite, and Retrofit.',
+      tags: ['Kotlin','SQLite','REST API','Offline Sync'],
+      apk: 'local-server.apk',
+      repo: '#'
+    },
+    {
+      id: 'vector-news',
+      title: 'Vector News',
+      short: 'News reader with community features powered by Firebase',
+      long: 'Vector News fetches headlines via REST, supports commenting and replies using Firebase, and implements pagination with Paging 3. Built with MVVM, Dagger Hilt, Retrofit, WorkManager, and Jetpack Navigation.',
+      tags: ['Kotlin','Firebase','Paging3','Dagger Hilt','MVVM'],
+      apk: 'vector-news.apk',
+      repo: '#'
+    },
+    {
+      id: 'kova',
+      title: 'Kova',
+      short: 'Fintech app for gift cards & coin exchange',
+      long: 'Kova is a secure fintech Android application for trading gift cards, buying/selling coins, and performing swaps between local currency and crypto-like tokens. Developed with Kotlin, MVVM, Dagger Hilt, integrated with Google Cloud APIs, and MongoDB backend for scalability.',
+      tags: ['Kotlin','MVVM','Dagger Hilt','Google Cloud','MongoDB','APIs'],
+      apk: 'kova.apk',
+      repo: '#'
+    }
+  ];
 
     const grid = document.getElementById('projectsGrid');
     function createCard(p) {
