@@ -6,7 +6,7 @@
   <title>Projects — Pius Powella David</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .hero-bg { background: linear-gradient(135deg,#0f172a 0%,#001219 100%);}    
+    .hero-bg { background: linear-gradient(135deg,#0f172a 0%,#001219 100%);}
     .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
   </style>
 </head>
@@ -48,13 +48,13 @@
         desc: 'News reader with community features powered by Firebase. Built with MVVM, Dagger Hilt, Retrofit, Paging3, and Jetpack Navigation.',
         tags: ['Kotlin','Firebase','Paging3','Dagger Hilt','MVVM'],
         live: 'https://github.com/kikas45/VectorDisplay/raw/62bb3f10dcdf6752eb573e72a2f76caf627cc87f/Vector-NewsApp-debug.apk',
-        repo: 'https://github.com/kikas45/VectorDisplay/tree/main'
+        repo: 'https://github.com/kikas45/VectorDisplay'
       },
       {
         title: 'Kova',
         desc: 'Fintech app for trading gift cards, buying/selling coins, and swaps between local currency and crypto tokens. Built with Kotlin, MVVM, Dagger Hilt, Google Cloud APIs, and MongoDB.',
         tags: ['Kotlin','MVVM','Dagger Hilt','Google Cloud','MongoDB','APIs'],
-        live: '#',
+        live: '', // put actual apk if available
         repo: 'https://github.com/kikas45/KovaDisplay'
       }
     ];
@@ -70,7 +70,7 @@
           ${p.tags.map(t => `<span class="inline-block mr-2">• ${t}</span>`).join('')}
         </div>
         <div class="mt-4 flex gap-3">
-          <a href="${p.live}" target="_blank" class="px-3 py-2 border border-slate-700 rounded-md text-sm">Download APK</a>
+          ${p.live ? `<a href="${p.live}" target="_blank" class="px-3 py-2 border border-slate-700 rounded-md text-sm">Download APK</a>` : ''}
           <a href="${p.repo}" target="_blank" class="px-3 py-2 bg-purple-600 rounded-md text-sm">View Repo</a>
         </div>
       `;
