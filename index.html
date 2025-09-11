@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,14 +8,8 @@
   <meta name="description"
     content="Portfolio of Pius Powella David — Android developer (Kotlin, Java). Projects, contact and links." />
   <style>
-    .hero-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #001219 100%);
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(6px);
-    }
+    .hero-bg { background: linear-gradient(135deg,#0f172a 0%,#001219 100%);}
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
   </style>
 </head>
 
@@ -37,8 +30,8 @@
 
         <div class="mt-3 flex flex-wrap gap-3">
           <a href="projects.html" class="px-3 py-2 bg-indigo-600 rounded-md text-sm font-medium">View Projects</a>
-          <a href="https://github.com/kikas45/portfolio/raw/main/DavidAndriodCV.pdf" 
-             download 
+          <a href="https://github.com/kikas45/portfolio/raw/main/DavidAndriodCV.pdf"
+             download
              class="px-3 py-2 bg-green-600 rounded-md text-sm font-medium">Download CV</a>
         </div>
 
@@ -48,10 +41,8 @@
           <p class="mt-2 text-base text-slate-300">
             Android developer with 7+ years building production apps, including fintech and enterprise-scale projects.
             Skilled in designing and consuming secure REST APIs, deploying services on Google Cloud, and implementing
-            CI/CD pipelines
-            for reliable delivery. Experienced with Kotlin, Java, and modern Android frameworks, I bridge mobile and
-            backend systems
-            to deliver scalable, maintainable solutions.
+            CI/CD pipelines for reliable delivery. Experienced with Kotlin, Java, and modern Android frameworks, I bridge
+            mobile and backend systems to deliver scalable, maintainable solutions.
           </p>
 
           <h4 class="mt-4 font-medium text-lg">Tech stack</h4>
@@ -73,7 +64,7 @@
       </div>
     </header>
 
-    <!-- Projects (only featured) -->
+    <!-- Featured Projects -->
     <section id="projects" class="mb-8">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-xl font-semibold mb-2 text-slate-200 ml-2">Featured Projects</h3>
@@ -82,7 +73,7 @@
       <div id="projectsGrid" class="grid gap-4 grid-cols-1 md:grid-cols-2"></div>
     </section>
 
-    <!-- Contact / Footer -->
+    <!-- Contact -->
     <section id="contact" class="rounded-lg p-6 bg-slate-800/40">
       <h3 class="text-xl font-semibold mb-2 text-slate-200">Contact</h3>
       <p class="text-slate-300">If you'd like to discuss a role or project, reach out:</p>
@@ -93,8 +84,8 @@
         <li>LinkedIn: <a href="http://www.linkedin.com/in/pius-powella-52b6951b9" class="underline text-slate-200">linkedin.com/in/pius-powella</a></li>
       </ul>
       <div class="mt-4">
-        <a href="https://github.com/kikas45/portfolio/raw/main/DavidAndriodCV.pdf" 
-           download 
+        <a href="https://github.com/kikas45/portfolio/raw/main/DavidAndriodCV.pdf"
+           download
            class="px-3 py-2 bg-green-600 rounded-md text-sm font-medium">Download CV</a>
       </div>
       <p class="mt-4 text-slate-400">© Pius Powella David — 2025.</p>
@@ -109,7 +100,7 @@
       <p id="modalDesc" class="mt-2 text-slate-300"></p>
       <div id="modalTags" class="mt-3 text-sm text-slate-400"></div>
       <div class="mt-4 flex gap-3">
-        <a id="modalLive" href="#" download class="flex-1 px-3 py-2 bg-indigo-600 rounded-md inline-block text-center">Download APK</a>
+        <a id="modalLive" href="#" class="flex-1 px-3 py-2 bg-indigo-600 rounded-md inline-block text-center">Download APK</a>
         <a id="modalRepo" href="#" target="_blank" class="flex-1 px-3 py-2 bg-green-600 rounded-md inline-block text-center">View Repo</a>
       </div>
     </div>
@@ -118,108 +109,78 @@
   <script>
     const projects = [
       {
-        id: 'sync2app',
         title: 'Sync2App',
         short: 'Digital signage & media display app used by Lafarge and Parallax Bank',
         long: 'Sync2App is a kiosk-mode Android app that displays media, syncs content periodically from a remote server, includes crash analytics, QR scanning, and device lock features. Built with Kotlin & Java, MVVM, Retrofit, and WorkManager.',
-        tags: ['Kotlin', 'Java', 'MVVM', 'Retrofit', 'WorkManager'],
+        tags: ['Kotlin','Java','MVVM','Retrofit','WorkManager'],
         apk: 'https://github.com/kikas45/DigitalSignature/raw/refs/heads/main/Sync2Ap_STP10.apk',
         repo: 'https://github.com/kikas45/DigitalSignature/blob/main/README.md'
       },
       {
-        id: 'local-server',
-        title: 'Local Server App',
-        short: 'Offline-first Android server for local data hosting & syncing',
-        long: 'A local server Android application enabling offline-first capabilities. Provides RESTful APIs for local devices, syncs with cloud when available, and supports lightweight database management. Built with Kotlin, SQLite, and Retrofit.',
-        tags: ['Kotlin', 'SQLite', 'REST API', 'Offline Sync'],
-        apk: 'https://github.com/kikas45/local_Server/blob/SmarxCellComplete/localServer.apk?raw=true',
-        repo: 'https://github.com/kikas45/local_Server'
-      },
-      {
-        id: 'vector-news',
         title: 'Vector News',
         short: 'News reader with community features powered by Firebase',
-        long: 'Vector News fetches headlines via REST, supports commenting and replies using Firebase, and implements pagination with Paging 3. Built with MVVM, Dagger Hilt, Retrofit, WorkManager, and Jetpack Navigation.',
-        tags: ['Kotlin', 'Firebase', 'Paging3', 'Dagger Hilt', 'MVVM'],
+        long: 'Vector News fetches headlines from multiple countries, allows commenting and replies via Firebase, supports Google Sign-In, offline saving, and dark mode. Built with MVVM, Dagger Hilt, Retrofit, WorkManager, and Paging3.',
+        tags: ['Kotlin','Firebase','Paging3','Dagger Hilt','MVVM'],
         apk: 'https://github.com/kikas45/VectorDisplay/raw/62bb3f10dcdf6752eb573e72a2f76caf627cc87f/Vector-NewsApp-debug.apk',
-        repo: 'https://github.com/kikas45/VectorDisplay/tree/main'
+        repo: 'https://github.com/kikas45/VectorDisplay'
       },
       {
-        id: 'kova',
         title: 'Kova',
-        short: 'Fintech app for gift cards & coin exchange',
-        long: 'Kova is a secure fintech Android application for trading gift cards, buying/selling coins, and performing swaps between local currency and crypto-like tokens. Developed with Kotlin, MVVM, Dagger Hilt, integrated with Google Cloud APIs, and MongoDB backend for scalability.',
-        tags: ['Kotlin', 'MVVM', 'Dagger Hilt', 'Google Cloud', 'MongoDB', 'APIs'],
-        apk: 'kova.apk',
+        short: 'Fintech app for trading gift cards & coins',
+        long: 'Kova is a secure fintech Android app for trading gift cards, buying/selling coins, and performing swaps between local currency and crypto-like tokens. Built with Kotlin, MVVM, Dagger Hilt, integrated with Google Cloud APIs, and MongoDB backend.',
+        tags: ['Kotlin','MVVM','Dagger Hilt','Google Cloud','MongoDB'],
+        apk: '', // update with real APK if available
         repo: 'https://github.com/kikas45/KovaDisplay'
       }
     ];
 
     const grid = document.getElementById('projectsGrid');
+
     function createCard(p) {
       const el = document.createElement('button');
-      el.className = 'text-left rounded-lg p-4 glass w-full hover:scale-[1.01] transition transform';
+      el.className = 'text-left rounded-lg p-4 glass w-full hover:scale-[1.01] transition';
       el.innerHTML = `
-        <div class="flex justify-between items-start">
-          <div>
-            <h4 class="font-semibold text-lg">${p.title}</h4>
-            <p class="text-slate-300 text-sm mt-1">${p.short}</p>
-            <div class="mt-3 text-xs text-slate-400">${p.tags.map(t => `<span class="inline-block mr-2">• ${t}</span>`).join('')}</div>
-          </div>
-          <div class="text-right"><span class="text-xs text-slate-400">Open</span></div>
+        <h4 class="font-semibold text-lg">${p.title}</h4>
+        <p class="text-slate-300 text-sm mt-1">${p.short}</p>
+        <div class="mt-3 text-xs text-slate-400">
+          ${p.tags.map(t => `<span class="inline-block mr-2">• ${t}</span>`).join('')}
         </div>`;
       el.addEventListener('click', () => openModal(p));
       return el;
     }
 
-    function render() {
-      grid.innerHTML = '';
-      projects.forEach(p => grid.appendChild(createCard(p)));
-    }
-
-    const modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modalContent');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalTags = document.getElementById('modalTags');
-    const modalLive = document.getElementById('modalLive');
-    const modalRepo = document.getElementById('modalRepo');
-    const closeModal = document.getElementById('closeModal');
-
     function openModal(p) {
       modalTitle.textContent = p.title;
       modalDesc.textContent = p.long;
       modalTags.innerHTML = p.tags.map(t => `<span class="inline-block mr-2 text-slate-400 text-sm">#${t}</span>`).join('');
-      modalLive.href = p.apk || '#';
-      modalLive.setAttribute('download', '');
+
+      if (p.apk && p.apk.endsWith('.apk')) {
+        modalLive.href = p.apk;
+        modalLive.setAttribute('download', '');
+      } else {
+        modalLive.href = p.apk || '#';
+        modalLive.removeAttribute('download');
+      }
       modalRepo.href = p.repo;
+
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
 
-    function hideModal() {
+    document.getElementById('closeModal').addEventListener('click', () => {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-    }
-
-    // Close with button
-    closeModal.addEventListener('click', hideModal);
-
-    // Close when clicking outside modalContent
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        hideModal();
-      }
     });
 
-    // Close with ESC key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        hideModal();
-      }
+    modal.addEventListener('click', e => {
+      if (e.target === modal) modal.classList.add('hidden');
     });
 
-    render();
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') modal.classList.add('hidden');
+    });
+
+    projects.forEach(p => grid.appendChild(createCard(p)));
   </script>
 </body>
 </html>
