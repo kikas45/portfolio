@@ -103,7 +103,7 @@
 
   <!-- Modal -->
   <div id="modal" class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
-    <div class="bg-slate-900 rounded-lg max-w-2xl w-full p-6">
+    <div id="modalContent" class="bg-slate-900 rounded-lg max-w-2xl w-full p-6">
       <button id="closeModal" class="text-slate-400 text-sm mb-2">Close ✕</button>
       <h3 id="modalTitle" class="text-xl font-bold"></h3>
       <p id="modalDesc" class="mt-2 text-slate-300"></p>
@@ -178,6 +178,7 @@
     }
 
     const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
     const modalTitle = document.getElementById('modalTitle');
     const modalDesc = document.getElementById('modalDesc');
     const modalTags = document.getElementById('modalTags');
@@ -196,9 +197,26 @@
       modal.classList.add('flex');
     }
 
-    closeModal.addEventListener('click', () => {
+    function hideModal() {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
+    }
+
+    // Close with button
+    closeModal.addEventListener('click', hideModal);
+
+    // Close when clicking outside modalContent
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        hideModal();
+      }
+    });
+
+    // Close with ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        hideModal();
+      }
     });
 
     render();
